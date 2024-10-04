@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TSSurance.Models.PolicyHolder>
+
+@{
+    ViewBag.Title = "SearchPolicyholder";
+}
+
+<h2>SearchPolicyholder</h2>
+
+@using (Html.BeginForm("SearchPolicyholder", "Policyholder", FormMethod.Post))
+{
+<label for="firstname">Firstname</label>
+<input class="form-control" id="firstname" name="firstname" type="text" />
+<label for="lastname">Lastname</label>
+<input class="form-control" id="lastname" name="lastname" type="text" />
+<label for="idno">IDNo</label>
+<input class="form-control" id="idno" name="idno" type="text" />
+
+<input type="submit" value="Search" class="btn btn-outline-primary" />
+}
+
+<div id="phList">
+    <!--Make provision for result space.-->
+    @if (Model != null)
+    {
+    <table style="table-layout:fixed;" class="table-bordered table-striped table-striped-columns w3-table-all">
+        <tr>
+            <th>Title</th><th>Firstname</th><th>Lastname</th>
+        </tr>
+        @foreach (TSSurance.Models.PolicyHolder ph in Model)
+        {
+        <tr>
+            <td>@ph.Title</td><td>@ph.FirstName</td><td>@ph.LastName</td><td><a href="PolicyholderDetail/@ph.PolicyHolderId" data-bind-id="@ph.PolicyHolderId">Details</a></td>
+        </tr>
+        }
+    </table>
+    }
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to Menu", "PolicyholderMenu")
+</div>
+

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "PolicyholderMenu";
+}
+@if (TempData["notes"]!=null)
+{
+
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<a class="btn btn-primary" href="/Policyholder/CreatePolicyholder">New Policyholder</a>
+<a class="btn btn-primary" href="/Policyholder/ListAllPolicyholders">All Policyholders</a>
+<a class="btn btn-outline-info" href="/Policyholder/SearchPolicyholder">Search Policyholders</a>
+
+<button id="btnDel">Delete </button>
+
+<h6>@ViewBag.Details</h6>
+
+@section scripts
+{
+<script>
+    //$(document).ready(() => {
+
+        let btnDel = $("#btnDel");
+    btnDel.click(() => {
+
+       // @TempData["notes"] = "My new data";
+            //alert("You knocked.")
+            //toastr.info("Hello. you knocked");
+        });
+
+    //});
+</script>
+ }

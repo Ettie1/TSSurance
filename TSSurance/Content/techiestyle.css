@@ -1,0 +1,35 @@
+﻿body {
+    /*background-color: green;*/
+}
+
+.splashHead {
+    font-weight: bolder;
+    width: fit-content;
+    background: linear-gradient(to right, lightgreen, lightblue, grey);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-animation: headAnim 3s infinite;
+    -o-animation: headAnim 3s infinite;
+    -webkit-animation: headAnim 3s infinite;
+    animation: headAnim 3s infinite;
+}
+
+@keyframes headAnim {
+    0% {
+        background: linear-gradient(to right, lightgreen, lightblue, grey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    50% {
+        background: linear-gradient(to right, grey,lightgreen, lightblue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: linear-gradient(to right, lightbluegrey,grey, lightgreen );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
